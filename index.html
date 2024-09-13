@@ -1,0 +1,162 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Full Screen Profile</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            display: flex;
+            flex-direction: column;
+            animation: gradientShift 10s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #00c1d4;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            padding: 2em;
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            color: #ffffff;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px 0;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0px 0px 10px #00c1d4);
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.2em;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            border-radius: 10px;
+            animation: slideUp 2s ease forwards;
+            color: #e0e0e0;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        a {
+            color: #00c1d4;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #00c1d4;
+            color: #ffffff;
+        }
+
+        address {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        address a {
+            color: #00c1d4;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        address a:hover {
+            background-color: #00c1d4;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Sanku Ram Sodhi - Contact: sankuramsodhi23@navgurukul.org
+    </header>
+
+    <div class="content">
+        <h1>About Me in Free Time</h1>
+        <img src="s9.jpeg" alt="Profile Picture">
+        <p>Hello! I'm Sanku Ram Sodhi, and here's what I do in my free time...</p>
+        <p><a href="p.html">Learn more about me</a></p>
+    </div>
+
+    <address>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="https://www.twitter.com/">Twitter</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+        <a href="movie.html">Movies</a>
+    </address>
+
+</body>
+
+</html>

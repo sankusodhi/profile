@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanku Ram Sodhi - Profile</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: rgba(44, 47, 51, 0.8);
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 2em;
+            color: #00d4ff;
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(47, 49, 54, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            text-align: center;
+            animation: fadeIn 2s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #00d4ff;
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #00d4ff;
+            text-shadow: 2px 2px 10px rgba(0, 212, 255, 0.5);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .achievements {
+            background-color: rgba(44, 47, 51, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .achievements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .achievements ul li {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .video {
+            margin: 20px 0;
+        }
+
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 5px solid #00d4ff;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: rgba(44, 47, 51, 0.8);
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+            color: #00d4ff;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            animation: bubbles 25s infinite;
+        }
+
+        @keyframes bubbles {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 300px 600px;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            video {
+                width: 100%;
+            }
+
+            .achievements ul li {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Sanku Sodhi - Software Developer
+    </header>
+
+    <div class="container">
+        <img class="profile-img" src="ss13.jpeg" alt="Profile Picture">
+        <h1>About Me</h1>
+        <p>Hi, I am <span class="highlight">Sanku Ram Sodhi</span>, a dedicated and energetic individual from <span class="highlight">Dantewada, Chhattisgarh</span>. 
+        I completed my 12th standard at <span class="highlight">Choo Lo Asmaan, Dantewada</span> and cleared multiple exams including <span class="highlight">JEE Mains, PET, NTA, SSC</span>, and the Science Exhibition Exam.
+        My hard work earned me <span class="highlight">two gold medals</span> for my JEE ranking, awarded by the MLA and the Prime Minister of India. 
+        I have also had the privilege to meet Rahul Gandhi for a congratulatory moment. Currently, I am pursuing my degree in <span class="highlight">Agricultural Engineering</span> at <span class="highlight">Assam University, Silchar</span> while learning software development at <span class="highlight">Navgurukul, Dantewada</span>.</p>
+
+        <div class="video">
+            <h2>My Introduction Video</h2>
+            <video controls>
+                <source src="12.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="achievements">
+            <h2>Key Achievements</h2>
+            <ul>
+                <li>Cleared <span class="highlight">JEE Mains, PET, NTA, SSC, and Science Exhibition Exams</span>.</li>
+                <li>Received <span class="highlight">two gold medals</span> for JEE rank from MLA and Prime Minister of India.</li>
+                <li>Met Rahul Gandhi and the District Collector for my achievements.</li>
+                <li>Currently pursuing <span class="highlight">B.Tech in Agricultural Engineering</span> at Assam University, Silchar.</li>
+                <li>Learning software development at <span class="highlight">Navgurukul, Dantewada</span>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 by Sanku Ram Sodhi. All Rights Reserved.
+    </footer>
+</body>
+
+</html>

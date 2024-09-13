@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('WhatsApp Image 2024-08-27 at 9.51.39 PM.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .search-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #00c1d4;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            width: 300px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            outline: none;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            width: 350px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 30px;
+            border: none;
+            background-color: #00c1d4;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0197a3;
+        }
+
+        .movie-info {
+            margin-top: 30px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .movie-info img {
+            margin-top: 10px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .movie-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #00c1d4;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0197a3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <h1>Find Your Favorite Movie</h1>
+        <input type="text" id="movieName" placeholder="Enter movie name...">
+        <button onclick="searchMovie()">Search</button>
+    </div>
+
+    <div class="movie-info" id="movieInfo"></div>
+
+    <script>
+        async function searchMovie() {
+            const movieName = document.getElementById('movieName').value;
+            const apiKey = '61621865';
+            const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`;
+
+            const response = await fetch(url);
+            const movie = await response.json();
+
+            if (movie.Response === "True") {
+                document.getElementById('movieInfo').innerHTML = `
+                    <h2>${movie.Title}</h2>
+                    <p><strong>Year:</strong> ${movie.Year}</p>
+                    <p><strong>Genre:</strong> ${movie.Genre}</p>
+                    <p><strong>Plot:</strong> ${movie.Plot}</p>
+                    <p><strong>IMDb Rating:</strong> ${movie.imdbRating}</p>
+                    <img  src="${movie.Poster}" alt="Movie Poster">
+                    <p><a href="https://www.imdb.com/title/${movie.imdbID}" target="_blank">Watch on IMDb</a></p>
+                `;
+            } else {
+                document.getElementById('movieInfo').innerHTML = `<p>Movie not found!</p>`;
+            }
+        }
+    </script>
+
+</body>
+</html>
